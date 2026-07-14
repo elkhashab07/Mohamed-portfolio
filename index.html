@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohamed Elkhashab — Operations Leadership Portfolio" />
+  <title>Mohamed Elkhashab | Operations Leadership Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#08111f;
+      --panel:#0e1a2d;
+      --panel-2:#111f35;
+      --text:#eaf0f8;
+      --muted:#93a4bd;
+      --faint:#5d6e88;
+      --line:rgba(255,255,255,.08);
+      --accent:#39d0b4;
+      --accent-2:#6cb6ff;
+      --amber:#f6b94a;
+      --purple:#aa8cff;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(0,0,0,.22);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 10%,rgba(57,208,180,.10),transparent 28%),
+        radial-gradient(circle at 88% 18%,rgba(108,182,255,.09),transparent 30%),
+        var(--bg);
+      font-family:Inter,system-ui,sans-serif;
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .shell{width:min(var(--max),calc(100% - 40px));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:rgba(8,17,31,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:20px}
+    .brand{font-family:Syne,sans-serif;font-weight:800;text-decoration:none}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:20px;flex-wrap:wrap}
+    .nav-links a{font:500 12px DM Mono,monospace;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
+    .nav-links a:hover{color:var(--accent)}
+    .hero{padding:92px 0 70px}
+    .eyebrow,.section-kicker{
+      display:inline-flex;align-items:center;gap:9px;
+      font:500 11px DM Mono,monospace;
+      letter-spacing:.14em;text-transform:uppercase;color:var(--accent)
+    }
+    .eyebrow:before,.section-kicker:before{content:"";width:28px;height:1px;background:var(--accent)}
+    h1,h2,h3{font-family:Syne,sans-serif;margin:0}
+    h1{font-size:clamp(3rem,8vw,6.8rem);line-height:.96;letter-spacing:-.04em;max-width:950px;margin-top:18px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .hero-copy{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted);max-width:760px;margin:28px 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:12px 17px;border-radius:8px;border:1px solid var(--line);font-weight:600;font-size:14px}
+    .btn.primary{background:var(--accent);color:#041310;border-color:var(--accent)}
+    .btn.secondary:hover{border-color:rgba(57,208,180,.45);color:var(--accent)}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:65px}
+    .metric,.card,.case,.skill-group,.journey{
+      background:linear-gradient(180deg,rgba(17,31,53,.95),rgba(14,26,45,.95));
+      border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)
+    }
+    .metric{padding:22px}
+    .metric strong{display:block;font:800 2.25rem Syne,sans-serif;color:var(--accent);line-height:1}
+    .metric span{display:block;color:var(--faint);font:500 11px DM Mono,monospace;text-transform:uppercase;letter-spacing:.08em;margin-top:9px}
+    section{padding:74px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.035em;line-height:1}
+    .section-head p{max-width:580px;color:var(--muted);margin:0}
+    .approach{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .card{padding:24px;min-height:205px}
+    .card .num{font:500 11px DM Mono,monospace;color:var(--accent);letter-spacing:.1em}
+    .card h3{font-size:1.15rem;margin:24px 0 9px}
+    .card p{font-size:14px;color:var(--muted);margin:0}
+    .cases{display:grid;gap:16px}
+    .case{padding:28px;display:grid;grid-template-columns:1.3fr 1fr;gap:34px}
+    .case-label{font:500 10px DM Mono,monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+    .case h3{font-size:clamp(1.35rem,3vw,2rem);margin:7px 0 10px}
+    .case p{color:var(--muted);margin:0}
+    .outcomes{display:grid;gap:10px;align-content:start}
+    .outcome{padding:11px 13px;border-radius:9px;background:rgba(57,208,180,.06);border:1px solid rgba(57,208,180,.16);font-size:13px;color:#c9d8e8}
+    .outcome strong{color:var(--accent)}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+    .tag{font:500 10px DM Mono,monospace;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line);padding:5px 8px;border-radius:5px;color:var(--muted)}
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .skill-group{padding:24px}
+    .skill-group h3{font-size:1.1rem;margin-bottom:14px}
+    .skill-group ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:var(--muted);font-size:14px}
+    .journey{padding:30px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+    .journey h3{font-size:clamp(1.5rem,4vw,2.5rem);margin:8px 0 10px}
+    .journey p{color:var(--muted)}
+    .status{display:inline-block;font:500 10px DM Mono,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);border:1px solid rgba(246,185,74,.28);background:rgba(246,185,74,.08);padding:5px 9px;border-radius:5px}
+    .learning-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;align-content:start}
+    .learning-grid div{padding:11px;border:1px solid var(--line);border-radius:8px;color:var(--muted);font-size:13px}
+    .philosophy{max-width:900px}
+    .philosophy p{font-size:1.05rem;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:34px 0 48px;margin-top:30px}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{font:500 11px DM Mono,monospace;text-decoration:none;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .footer-links a:hover{color:var(--accent)}
+    @media(max-width:900px){
+      .metrics{grid-template-columns:repeat(2,1fr)}
+      .approach{grid-template-columns:repeat(2,1fr)}
+      .skills{grid-template-columns:repeat(2,1fr)}
+      .case,.journey{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .nav-links{display:none}
+      .hero{padding-top:62px}
+      .metrics,.approach,.skills{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .case{padding:22px}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="shell nav-inner">
+    <a class="brand" href="#top">Mohamed <span>Elkhashab</span></a>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#programs">Programs</a>
+      <a href="#skills">Capabilities</a>
+      <a href="#infrastructure">Infrastructure</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="shell">
+      <div class="eyebrow">Operations Leadership Portfolio</div>
+      <h1>I build systems that make complex operations <em>predictable.</em></h1>
+      <p class="hero-copy">
+        Operations director with 10+ years leading regulated, high-stakes environments through governance,
+        process improvement, analytics, enterprise change, and cross-functional execution. Currently expanding
+        into mission-critical infrastructure, operational readiness, and data center operations.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#programs">View Case Studies</a>
+        <a class="btn secondary" href="Mohamed_Elkhashab_Resume.pdf" target="_blank" rel="noopener">Open Resume</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/mohamed-elkhashab-6624ba82" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><strong>10+</strong><span>Years Leading Operations</span></div>
+        <div class="metric"><strong>400+</strong><span>Employees Trained</span></div>
+        <div class="metric"><strong>10+</strong><span>Departments Coordinated</span></div>
+        <div class="metric"><strong>50%+</strong><span>KPI Accountability Improvement</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="approach">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Operating Model</div>
+          <h2>How I approach operations</h2>
+        </div>
+        <p>Reliable operations emerge when governance, data, process, people, and technology reinforce one another.</p>
+      </div>
+      <div class="approach">
+        <article class="card"><div class="num">01</div><h3>Governance</h3><p>Clear ownership, decision rights, escalation paths, and structured accountability.</p></article>
+        <article class="card"><div class="num">02</div><h3>Data</h3><p>KPIs, dashboards, trend analysis, leading indicators, and executive-ready reporting.</p></article>
+        <article class="card"><div class="num">03</div><h3>Process</h3><p>Standardization, risk controls, continuous improvement, and scalable workflows.</p></article>
+        <article class="card"><div class="num">04</div><h3>People</h3><p>Training, coaching, adoption planning, performance management, and practical change leadership.</p></article>
+        <article class="card"><div class="num">05</div><h3>Technology</h3><p>Enterprise systems, analytics, workflow design, automation, and AI-enabled decision support.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Selected Work</div>
+          <h2>Enterprise programs</h2>
+        </div>
+        <p>Representative initiatives showing how I diagnose operational risk, design systems, align teams, and sustain measurable improvement.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case">
+          <div>
+            <div class="case-label">Enterprise Systems Transformation</div>
+            <h3>Redesigned a mission-critical documentation platform across 10 departments</h3>
+            <p>Led workflow redesign, training, adoption tracking, and stakeholder coordination for a Cerner PowerChart / Iris implementation affecting more than 140 staff. Converted inconsistent processes into structured digital workflows and created the governance needed to sustain adoption.</p>
+            <div class="tags"><span class="tag">Program Management</span><span class="tag">Change Management</span><span class="tag">Enterprise Systems</span><span class="tag">Workflow Design</span></div>
+          </div>
+          <div class="outcomes">
+            <div class="outcome"><strong>95%</strong> training completion in 2 months against a 75% target in 3 months</div>
+            <div class="outcome"><strong>80%</strong> of documentation transitioned into structured digital workflows</div>
+            <div class="outcome">Reduced audit exposure through consistent processes and adoption controls</div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <div class="case-label">Operational Governance</div>
+            <h3>Built a cross-functional governance system spanning 10+ departments</h3>
+            <p>Created and chaired a governance committee to resolve conflicting action plans, delayed escalations, and operational silos. Designed meeting cadence, ownership standards, escalation protocols, shared metrics, and follow-up controls.</p>
+            <div class="tags"><span class="tag">Governance</span><span class="tag">Cross-Functional Leadership</span><span class="tag">Risk Management</span><span class="tag">KPI Reporting</span></div>
+          </div>
+          <div class="outcomes">
+            <div class="outcome"><strong>55%</strong> improvement in interdepartmental action-plan execution</div>
+            <div class="outcome">Reduced risk-identification timelines from months to weeks</div>
+            <div class="outcome">Established consistent checks and balances across participating functions</div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <div class="case-label">Compliance Recovery</div>
+            <h3>Directed structured remediation across two high-risk facilities</h3>
+            <p>Built corrective-action trackers, analyzed recurring deficiencies, coordinated retraining, and created executive and legislative reporting for operations facing escalating external oversight and potential funding loss.</p>
+            <div class="tags"><span class="tag">CAPA</span><span class="tag">Root Cause Analysis</span><span class="tag">Audit Readiness</span><span class="tag">Executive Reporting</span></div>
+          </div>
+          <div class="outcomes">
+            <div class="outcome"><strong>100%</strong> staff retraining completed on noncompliant processes</div>
+            <div class="outcome">Eliminated repeat deficiencies and avoided escalated oversight</div>
+            <div class="outcome">Data-backed recommendations contributed to restored program funding</div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <div class="case-label">Performance Management</div>
+            <h3>Shifted departmental monitoring from reactive follow-up to proactive KPI governance</h3>
+            <p>Designed automated Excel dashboards and structured operational review cycles across 17 teams. Replaced fragmented tracking with visible ownership, recurring analysis, and data-tied follow-up.</p>
+            <div class="tags"><span class="tag">Analytics</span><span class="tag">Advanced Excel</span><span class="tag">Operational Excellence</span><span class="tag">Performance Management</span></div>
+          </div>
+          <div class="outcomes">
+            <div class="outcome"><strong>43%</strong> increase in departmental goals meeting success measures</div>
+            <div class="outcome"><strong>50%+</strong> improvement in KPI accountability</div>
+            <div class="outcome">Documentation scores improved from approximately 60% to sustained 80–90% performance</div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div>
+            <div class="case-label">Workforce Systems</div>
+            <h3>Redesigned training and staffing systems to stabilize a high-turnover function</h3>
+            <p>Rebuilt onboarding around shadowing, structured audits, practical learning, and rapid feedback. Combined workforce analytics, coaching, and operational follow-through to reduce persistent vacancies.</p>
+            <div class="tags"><span class="tag">Workforce Planning</span><span class="tag">Training Design</span><span class="tag">Process Improvement</span><span class="tag">People Leadership</span></div>
+          </div>
+          <div class="outcomes">
+            <div class="outcome">Reduced training time from roughly one month to one week</div>
+            <div class="outcome"><strong>85%</strong> reduction in recurring vacancies</div>
+            <div class="outcome">Established a repeatable learning-through-practice model</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Capabilities</div>
+          <h2>What I bring</h2>
+        </div>
+        <p>A combination of operational leadership, governance, analytics, and technology implementation.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-group"><h3>Operations</h3><ul><li>Program Management</li><li>Operational Excellence</li><li>Process Improvement</li><li>Operational Readiness</li><li>Cross-Functional Leadership</li></ul></div>
+        <div class="skill-group"><h3>Governance & Risk</h3><ul><li>CAPA Management</li><li>Audit Readiness</li><li>Root Cause Analysis</li><li>Risk Mitigation</li><li>Corrective Action Governance</li></ul></div>
+        <div class="skill-group"><h3>Analytics</h3><ul><li>Advanced Excel</li><li>KPI Development</li><li>Executive Dashboards</li><li>Python</li><li>SQL</li></ul></div>
+        <div class="skill-group"><h3>Technology</h3><ul><li>Enterprise Systems</li><li>Cerner PowerChart / Iris</li><li>Workflow Automation</li><li>Microsoft 365</li><li>GitHub / Jupyter</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="infrastructure">
+    <div class="shell">
+      <div class="journey">
+        <div>
+          <div class="section-kicker">Current Direction</div>
+          <h3>Mission-critical infrastructure</h3>
+          <span class="status">Professional Development In Progress</span>
+          <p>I am extending my operations, governance, and analytics background into data center operations and critical infrastructure. The goal is not to discard a decade of leadership experience, but to apply it to operational readiness, infrastructure deployment, compliance, process improvement, capacity governance, and resource performance.</p>
+          <p><strong>Current pathway:</strong> Schneider Electric Data Center University, followed by Certified Data Centre Professional (CDCP) preparation.</p>
+        </div>
+        <div class="learning-grid">
+          <div>Power distribution fundamentals</div>
+          <div>UPS and backup systems</div>
+          <div>Cooling infrastructure</div>
+          <div>Redundancy and resilience</div>
+          <div>Operational readiness</div>
+          <div>SOP / MOP / EOP structures</div>
+          <div>PUE and WUE performance</div>
+          <div>Critical facilities governance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell philosophy">
+      <div class="section-kicker">Leadership Philosophy</div>
+      <h2>Structure without bureaucracy</h2>
+      <p>I believe strong operations leaders make expectations visible, connect performance data to action, and build systems that remain effective without constant executive intervention. My approach is direct: understand the failure point, define ownership, establish a measurable operating rhythm, remove unnecessary complexity, and create enough governance to keep the improvement from fading.</p>
+      <p>Data matters, but only when it changes a decision. Process matters, but only when people can actually follow it. Leadership matters most when teams understand both what is expected and why the work matters.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="shell footer-inner">
+    <div>
+      <strong>Mohamed Elkhashab</strong><br>
+      <span style="color:var(--muted);font-size:13px">Austin, Texas · Operations Leadership</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:Elkhashab07@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/mohamed-elkhashab-6624ba82" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Mohamed_Elkhashab_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
